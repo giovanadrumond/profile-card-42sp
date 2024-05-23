@@ -1,0 +1,54 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+.container { 
+    background-color: black; 
+    align-items: center;
+} 
+
+.container_one { 
+    display: inline-block; 
+} 
+
+.container_two { 
+    text-align: center; 
+    display: inline-block; 
+    color: white; 
+    text-decoration: none; 
+    padding: 35px; 
+} 
+
+.dropdown { 
+    position: relative; 
+} 
+
+.dropdown_acessorios { 
+    position: absolute; 
+    box-shadow: 0 0 2px black; 
+    display: none; 
+    background-color: pink; 
+} 
+
+.dropdown_roupas { 
+    position: absolute; 
+    box-shadow: 0 0 2px black; 
+    display: none; 
+    background-color: pink; 
+} 
+
+.container_two:hover {
+    background-color: pink; 
+} 
+
+.dropdown:hover .dropdown_acessorios,
+.dropdown_acessorios:hover {
+    display: block;
+}
+
+.dropdown:hover .dropdown_roupas,
+.dropdown_roupas:hover {
+    display: block;
+}
