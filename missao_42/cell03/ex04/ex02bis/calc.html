@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Básica</title>
+  <link rel="stylesheet" href="calc.css">
+  <style>
+
+.calculator {
+  margin: 100px auto;
+  width: 300px;
+  text-align: center;
+}
+
+input[type="text"],
+select,
+input[type="button"] {
+  margin: 5px;
+  padding: 5px;
+}
+  </style>
+</head>
+
+<body>
+  <div class="calculator">
+    <input type="text" id="leftOperand" placeholder="Membro Esquerdo">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="text" id="rightOperand" placeholder="Membro Direito">
+    <input type="button" id="calculateButton" value="Try me!">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="calc.js"></script>
+</body>
+</html>
+
+  <script>
+$(document).ready(function() {
+  $("#calculateButton").click(function() {
+    var leftOperand = Number($("#leftOperand").val());
+    var operator = $("#operator").val();
+    var rightOperand = Number($("#rightOperand").val());
+    var result;
+
+    if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0 || !Number.isInteger(leftOperand) || !Number.isInteger(rightOperand)) {
+      alert("Error :(");
+      return;
+    }
+
+    switch (operator) {
+      case "+":
+        result = leftOperand + rightOperand;
+        break;
+      case "-":
+        result = leftOperand - rightOperand;
+        break;
+      case "*":
+        result = leftOperand * rightOperand;
+        break;
+      case "/":
+        if (rightOperand === 0) {
+          alert("It’s over 9000!");
+          return;
+        }
+        result = leftOperand / rightOperand;
+        break;
+      case "%":
+        if (rightOperand === 0) {
+          alert("It’s over 9000!");
+          return;
+        }
+        result = leftOperand % rightOperand;
+        break;
+      default:
+        alert("Error :(");
+        return;
+    }
+
+    alert("O resultado é: " + result);
+  });
+
+  setInterval(function() {
+    alert("Please, use me...");
+  }, 30000);
+});
+
+  </script>
+</body>
+</html>

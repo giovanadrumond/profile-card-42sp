@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Mini Gerenciador de Tarefas</title>
+  <style>
+    .task-list {
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .task {
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+    .task:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="ft_list" class="task-list"></div>
+
+<button id="addTaskButton">Adicionar tarefa</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="todo.js"></script>
+</body>
+</html>
